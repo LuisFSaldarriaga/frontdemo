@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center">
+
+    <form [formGroup]="hacedorForm" (ngSubmit)="saveSubmit()" class="mt-3" action="">
+
+        <div class="mb-3">
+            <label for="inputName" class="form-label">Nombre</label>
+            <input formControlName="name"  value="item" type="text" class="form-control" id="nameInput" placeholder="Nombre de pila">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputDocument" class="form-label">Documento</label>
+            <input formControlName="document" value="item" type="text" class="form-control" id="documentInput" placeholder="Cedula">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputDireccion" class="form-label">Direccion</label>
+            <input formControlName="direccion" value="item" type="text" class="form-control" id="direccionInput" placeholder="Ciudad y Direccion">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input formControlName="email" value="item" type="email" class="form-control" id="emailInput" placeholder="nombre@ejemplo.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputContraseña" class="form-label">Contraseña</label>
+            <input formControlName="password" value="item" type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputType" class="form-label">Tipo de servicio</label>
+            <select formControlName="job" value="item" class="form-select" id="inputType">
+              <option selected disabled value="">Elegir...</option>
+              <option [ngValue]="item.type" value="item" *ngFor="let item of types"> {{item.type}} </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputWorkarea" class="form-label">Area de trabajo</label>
+            <input formControlName="workrange" value="item" type="text" class="form-control" id="workrangeInput" placeholder="Contraseña">
+        </div>
+
+        <div class="mb-3 d-flex flex-fill justify-content-center">
+            <button type="submit" class="btn btn-dark mb-3" >Registrar</button>
+          </div>
+
+    </form>
+
+</div>

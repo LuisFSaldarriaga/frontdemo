@@ -1,0 +1,30 @@
+<div class="row align-items-center m-lg-5 m-2">
+
+    <form [formGroup]="hacedorConsultForm" class="mt-3 col" action="">
+
+        <div class="mb-3">
+            <label for="inputID" class="form-label">Id</label>
+            <input formControlName="id" type="text" class="form-control" id="inputID" placeholder="Numero único de identificación">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputDocument" class="form-label">Documento</label>
+            <input formControlName="document" type="text" class="form-control" id="inputDocument" placeholder="Cedula">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+
+        <div class="mb-3 d-flex flex-fill justify-content-center">
+            <button type="submit" class="btn btn-dark mb-3">Buscar Hacedor</button>
+        </div>
+
+    </form>
+
+    <div class="col justify-content-center">
+        <input type="text" class="d-flex flex-fill form-control-plaintext form-control-lg readonly" id="consultHacedorOutput">
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="container d-flex-row justify-content-center px-5">
+
+    <form [formGroup]="solicitarTipoForm">
+        <h3 class="mt-2 mx-2">Nuevo tipo de servicio: </h3>
+
+        <div class="mb-3 mx-1">
+            <label for="inputContraseña" class="form-label">Tipo de servicio</label>
+            <h5>por favor ingresar en minusculas y sin tildes u otro tipo de caracteres.</h5>
+            <input formControlName="type" type="text" class="form-control" id="typeInput" placeholder="ej. conduccion" required>
+        </div>
+
+        <div class="mb-3 d-flex flex-fill justify-content-center">
+            <button type="submit" class="btn btn-dark mb-3">Registrar</button>
+        </div>
+    </form>
+
+
+</div>
