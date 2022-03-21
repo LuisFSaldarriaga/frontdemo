@@ -1,6 +1,6 @@
 <div class="container d-flex-row justify-content-center px-5">
 
-    <form [formGroup]="solicitarTipoForm">
+    <form [formGroup]="solicitarTipoForm" (ngSubmit)="saveSubmit()">
         <h3 class="mt-2 mx-2">Nuevo tipo de servicio: </h3>
 
         <div class="mb-3 mx-1">

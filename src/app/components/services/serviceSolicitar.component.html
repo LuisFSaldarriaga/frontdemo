@@ -1,35 +1,42 @@
 <div class="container d-flex-row justify-content-center px-5">
 
-    <form [formGroup]="solicitarForm" class="mt-3" action="">
+  <form [formGroup]="solicitarForm" (ngSubmit)="saveSubmit()" class="mt-3">
 
-        <div class="mb-3">
-            <label for="inputType" class="form-label">Tipo de servicio</label>
-            <select formControlName="type" class="form-select" id="inputType">
-              <option selected disabled value="">Elegir...</option>
-              <option value="item.type" *ngFor="let item of types"> {{item.type}} </option>
-            </select>
+    <div class="mb-3">
+      <label for="inputType" class="form-label">Tipo de servicio</label>
+      <select formControlName="type" class="form-select" id="inputType" required>
+        <option selected disabled value="">Elegir...</option>
+        <option [ngValue]="item.type" *ngFor="let item of types"> {{item.type}} </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputDocument" class="form-label">Descripción del servicio</label>
+      <input formControlName="descryption" type="text" class="form-control" id="descryptionInput"
+        placeholder="Describa el servicio" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputValor" class="form-label">Valor</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">$</span>
+        <input formControlName="value" type="text" class="form-control" id="inputValor"
+          aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Por favor ingrese el valor.
         </div>
+      </div>
+    </div>
+    <fieldset >
+      <label for="inputStatus">Estado:</label>
+      <select formControlName="status" class="form-select" id="inputStatus">
+        <option [selected]="true" [ngValue]="status">Emparejar</option>
+      </select>
+    </fieldset>
+    <div class="my-3 d-flex flex-fill justify-content-center">
+      <button type="submit" class="btn btn-dark mb-3">Registrar</button>
+    </div>
 
-        <div class="mb-3">
-            <label for="inputDocument" class="form-label">Descripción del servicio</label>
-            <input formControlName="descryption" type="text" class="form-control" id="descryptionInput" placeholder="Describa el servicio">
-        </div>
-
-        <div class="mb-3">
-            <label for="inputValor" class="form-label">Valor</label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">$</span>
-              <input formControlName="value" type="text" class="form-control" id="inputValor" aria-describedby="inputGroupPrepend">
-              <div class="invalid-feedback">
-                Por favor ingrese el valor.
-              </div>
-            </div>
-        </div>
-
-        <div class="mb-3 d-flex flex-fill justify-content-center">
-            <button type="submit" class="btn btn-dark mb-3">Registrar</button>
-        </div>
-
-    </form>
+  </form>
 
 </div>

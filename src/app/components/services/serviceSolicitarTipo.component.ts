@@ -26,7 +26,12 @@ export class serviceSolicitarTipo {
 
     }
 
-    saveSubmit(){
+    saveSubmit() {
+
+        this.solicitarServiceTipo.saveServicioNuevo(this.solicitarTipoForm.value).subscribe({
+            next: resp => { console.log("registrado") },
+            error: err => { console.error(err) }
+        })
 
     }
 

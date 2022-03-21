@@ -31,22 +31,22 @@ export class registerHacedor implements OnInit {
   }
   ngOnInit(): void {
 
-    this.hacedorService.getAllTypes().subscribe({ 
-      next: resp => {this.types = resp;},
-      error: err => { console.error(err)}
+    this.hacedorService.getAllTypes().subscribe({
+      next: resp => { this.types = resp; },
+      error: err => { console.error(err) }
     })
 
   }
 
   saveSubmit() {
 
-    this.hacedorService.saveHacedor(this.hacedorForm.value).subscribe({ 
-      next: resp => {console.log(resp)},
-      error: err => { console.error(err)}
+    this.hacedorService.saveHacedor(this.hacedorForm.value).subscribe({
+      next: resp => { console.log("registrado") },
+      error: err => { console.error(err) }
     })
 
   }
- 
+
 
 
 

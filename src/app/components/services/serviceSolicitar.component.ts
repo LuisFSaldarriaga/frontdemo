@@ -9,6 +9,7 @@ import { ServiceSolicitarService } from './service-solicitar.service';
 })
 export class serviceSolicitar {
 
+    status: any;
     types: any;
    
     solicitarForm: FormGroup = this.fb.group({
@@ -27,7 +28,7 @@ export class serviceSolicitar {
         
     }
     ngOnInit(): void {
-        
+        this.status="paring";
         this.solicitarService.getAllTypes().subscribe({ 
             next: resp => {this.types = resp;},
             error: err => { console.error(err)}
@@ -35,7 +36,12 @@ export class serviceSolicitar {
 
     }
 
-    saveSubmit(){
+    saveSubmit() {
+
+        this.solicitarService.saveServicio(this.solicitarForm.value).subscribe({
+            next: resp => { console.log("registrado") },
+            error: err => { console.error(err) }
+        })
 
     }
 
